@@ -124,6 +124,12 @@ TEST(median, even_pos_neg2) {
     EXPECT_EQ(median(iss, g_max_size), -1);
 }
 
+TEST(median, even_two) {
+    std::string input = "1\n2";
+    std::istringstream iss(input);
+    EXPECT_EQ(median(iss, g_max_size), (1 + 2) / 2);
+}
+
 TEST(median, even_random) {
     std::srand(std::time(0));
 
@@ -208,6 +214,12 @@ TEST(median, odd_pos_neg2) {
     std::string input = "-1\n-2\n7\n-3\n6\n5\n-1\n-5\n-6\n4\n-4\n-7\n2\n3\n-1";
     std::istringstream iss(input);
     EXPECT_EQ(median(iss, g_max_size), -1);
+}
+
+TEST(median, even_two) {
+    std::string input = "1\n2";
+    std::istringstream iss(input);
+    EXPECT_EQ(median(iss, g_max_size), (1 + 2) / 2);
 }
 
 TEST(median, odd_random) {

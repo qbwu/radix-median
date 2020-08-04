@@ -119,6 +119,9 @@ int median(std::istream &file, size_t max_buf_size) {
         }
 
         if (i == 0) {
+            if (total_n == 0) {
+                throw std::invalid_argument("Invalid input, none of numbers");
+            }
             mid_n = total_n >> 1;
             is_even = (total_n == mid_n << 1);
         }
