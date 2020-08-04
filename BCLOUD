@@ -1,0 +1,31 @@
+#edit-mode: -*- python -*-
+#coding:utf-8
+
+WORKROOT('../../../')
+
+ISYSTEM()
+
+#platform, if not write PLATFORM('xxx') in BCLOUD file, default is 'centos4u3'
+PLATFORM('centos4u3')
+
+#gcc version, default 'gcc'
+GCC('gcc82')
+
+#C++ flags.
+CXXFLAGS('-DNDEBUG')
+CXXFLAGS('-std=c++11 -g -O2 -pipe -W -Wall -Werror -fPIC -pthread')
+
+#-I path
+INCPATHS('. $INC')
+
+#link flags
+LDFLAGS('-lpthread -lrt -lz')
+
+CONFIGS('xxxxx/third-party/gflags@gflags_V2.2.2.7_GCC820_6U3_K3_GEN_PD_BL@git_tag')
+
+HEADERS('./src/median.h', '$INC')
+
+#bin
+Application('median', Sources(GLOB('src/*.cpp')))
+
+Directory('./test')
