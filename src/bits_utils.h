@@ -37,7 +37,7 @@ inline unsigned bits(unsigned num, size_t beg, size_t len) {
 }
 
 inline unsigned hilo(unsigned hbits, unsigned lbits, size_t hlen, size_t llen) {
-    // For unused-parameter warnings if compired with -DNDEBUG
+    // For suppressing unused-parameter warnings if compiled with -DNDEBUG
     (void) hlen;
     assert(hlen + llen <= INT_BITS);
     return (hbits << llen) | lbits;
